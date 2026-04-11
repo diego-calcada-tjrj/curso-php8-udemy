@@ -8,26 +8,26 @@ services:
     build: './apache/'
     depends_on:
       - php
-      - mysql
+      # - mysql
     ports:
       - "8080:80"
     volumes:
       - ./public:/var/www/html/
-  mysql:
-    image: mysql:5.7
-    restart: always
-    ports:
-      - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-      # Initially creates employees table
-      - ./public/dump:/docker-entrypoint-initdb.d/
-    environment:
-      MYSQL_ROOT_PASSWORD: "passwd"
-      MYSQL_DATABASE: "mydb"
-      MYSQL_USER: "user1"
-      MYSQL_PASSWORD: "passwd"
-volumes:
-    db_data:
+  # mysql:
+  #   image: mysql:5.7
+  #   restart: always
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #     # Initially creates employees table
+  #     - ./public/dump:/docker-entrypoint-initdb.d/
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: "passwd"
+  #     MYSQL_DATABASE: "mydb"
+  #     MYSQL_USER: "user1"
+  #     MYSQL_PASSWORD: "passwd"
+# volumes:
+    # db_data:
 
 
