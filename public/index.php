@@ -11,13 +11,50 @@
 </head>
 <body>
 
-
 <?php
+// Aula 2.18 - Escopo de variáveis
+
+// Escopo Global
+$global = "exemplo de global";
+
+
+// Binding global variable
+
+function renderizar(){
+    global $global;
+    echo $global;
+}
+
+// Escopo Local
+
+function bind(){
+    global $g2;
+    $g2 = "exemplo de global para FORA ";
+}
+
+// Inclusão de Arquivos
+// include "arquivo.php";
+
+echo "Global simples <br/>";
+var_dump($global);
+echo "<br />";
+
+echo "Global bind para DENTRO de function <br/>";
+renderizar();
+echo "<br />";
+
+echo "Global bind para FORA de function <br/>";
+bind();
+echo $g2;
+echo "<br />";
+?>
+
+
+
+<!-- <?php
 // Aula 2.17 - Referências
 
-
 // Atribuição por referência
-
 $a = 50;
 $b = &$a;
 $c = $a;
@@ -40,10 +77,8 @@ var_dump($c);
 // Retorno por referência
 // Próx. aulas
 
-
-
 ?>
-
+ -->
 <!-- 
 <?php
 // Aula 2.16 - Tipos de Dados
