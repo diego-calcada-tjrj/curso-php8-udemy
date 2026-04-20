@@ -13,6 +13,39 @@
 
 
 <?php
+// Aula 2.17 - Referências
+
+
+// Atribuição por referência
+
+$a = 50;
+$b = &$a;
+$c = $a;
+
+
+var_dump($a);
+var_dump($b);
+var_dump($c);
+
+$a = 250;
+
+var_dump($a);
+var_dump($b);
+var_dump($c);
+
+// Passagem de parâmetro por referência
+// Próx. aulas
+
+
+// Retorno por referência
+// Próx. aulas
+
+
+
+?>
+
+<!-- 
+<?php
 // Aula 2.16 - Tipos de Dados
 
 /* 
@@ -75,7 +108,7 @@ echo "<br/>";
 
 
 ?>
-
+ -->
 
 <!-- <?php
 // Aula 2.15 - Constantes
