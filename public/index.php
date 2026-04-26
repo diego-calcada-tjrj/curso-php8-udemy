@@ -12,65 +12,85 @@
 <body>
 
 <?php
-// Aula 3.37 - Match
-
-$msg = "200";
-
-$retorno = match($msg) {
-    "200" => "Sucesso",
-    "300" => "Redirect",
-    default => "Padrão"
-};
-
-var_dump($retorno);
+// Aula 5.52 - Parâmetros e Argumentos
 
 
-$age = 18;
+// Argumento com default value
+function somar($numA = 20, $numB = 30){
+    echo $numA + $numB . "<br />";
+}
 
-$output = match (true) {
-    $age < 2 => "Baby",
-    $age < 13 => "Child",
-    $age <= 19 => "Teenager",
-    $age >= 40 => "Old adult",
-    $age > 19 => "Young adult",
-};
+somar();                            // 50
+somar(null);                        // 30
+somar(null, null);                  // 0
+somar(null, null, null);            // 0
+somar(null, null, null, null);      // 0
 
-var_dump($output);
+/* 
+// Tipagem
+function somar(int $numA, int $numB = 30){
+    echo $numA + $numB . "<br />";
+}
+
+somar("oi");
+
+ */
+
+/* 
+// Named Arguments
+function somar($numA, $numB = 30){
+    echo $numA + $numB . "<br />";
+}
+
+somar(
+    numB: 40,
+    numA: 80 
+);
+
+ */
+/* 
+// Argumento com default value
+function somar($numA = 20, $numB = 30){
+    echo $numA + $numB . "<br />";
+}
+
+somar(40);                          // 70
+somar();                            // 50
+somar(null);                        // 30
+somar(null, null);                  // 0
+somar(null, null, null);            // 0
+somar(null, null, null, null);      // 0
+ */
 
 
-// https://www.php.net/manual/en/control-structures.match.php
+
+/* // Argumento por referência
+$a = 50;
+
+function somar(&$numA, $numB){
+    $numA += $numB;
+    echo $numA . "<br />";
+}
+
+somar($a, 2);
+echo "Valor de a: $a";
+
+ */
+/* 
+// Function simples
+
+$a = 50;
+
+function somar($numA, $numB){
+    $numA += $numB;
+    echo $numA . "<br />";
+}
+
+somar($a, 2);
+
+echo "Valor de a: $a";
+ */
+
 ?>
-
-<!-- <?php
-// Aula 3.31 - Operadores de Arrays
-
-// Operador de União +
-$a = ["Gol", "Latam", "Azul"];
-$b = ["Delta", "Qatar"];
-
-var_dump($a + $b);
-echo "<br/>";
-var_dump($b + $a);
-echo "<br/>";
-
-
-$c = [1,2,3];
-$d = [2 => 3, 1 => 2,0 => 1];
-
-var_dump($c == $d);
-var_dump($c === $d);
-?> -->
-
-<!-- 
-<?php
-// Aula 3.28 - Operadores de Execução
-
-// Operador de crase
-$output = `ls -al`;
-echo "<pre>$output</pre>";
-
-
-?>
- -->
 </body>
 </html>
