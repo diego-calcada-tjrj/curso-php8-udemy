@@ -11,8 +11,37 @@
 </head>
 <body>
 
-
 <?php
+// Aula 3.37 - Match
+
+$msg = "200";
+
+$retorno = match($msg) {
+    "200" => "Sucesso",
+    "300" => "Redirect",
+    default => "Padrão"
+};
+
+var_dump($retorno);
+
+
+$age = 18;
+
+$output = match (true) {
+    $age < 2 => "Baby",
+    $age < 13 => "Child",
+    $age <= 19 => "Teenager",
+    $age >= 40 => "Old adult",
+    $age > 19 => "Young adult",
+};
+
+var_dump($output);
+
+
+// https://www.php.net/manual/en/control-structures.match.php
+?>
+
+<!-- <?php
 // Aula 3.31 - Operadores de Arrays
 
 // Operador de União +
@@ -30,7 +59,7 @@ $d = [2 => 3, 1 => 2,0 => 1];
 
 var_dump($c == $d);
 var_dump($c === $d);
-?>
+?> -->
 
 <!-- 
 <?php
