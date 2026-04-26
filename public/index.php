@@ -12,84 +12,17 @@
 <body>
 
 <?php
-// Aula 5.52 - Parâmetros e Argumentos
+// Aula 5.55 - Funções Variáveis
 
-
-// Argumento com default value
-function somar($numA = 20, $numB = 30){
-    echo $numA + $numB . "<br />";
+function somar ($a, $b)
+{
+    return $a + $b;
 }
 
-somar();                            // 50
-somar(null);                        // 30
-somar(null, null);                  // 0
-somar(null, null, null);            // 0
-somar(null, null, null, null);      // 0
+$nome = "somar";
 
-/* 
-// Tipagem
-function somar(int $numA, int $numB = 30){
-    echo $numA + $numB . "<br />";
-}
+echo $nome(1,2);
 
-somar("oi");
-
- */
-
-/* 
-// Named Arguments
-function somar($numA, $numB = 30){
-    echo $numA + $numB . "<br />";
-}
-
-somar(
-    numB: 40,
-    numA: 80 
-);
-
- */
-/* 
-// Argumento com default value
-function somar($numA = 20, $numB = 30){
-    echo $numA + $numB . "<br />";
-}
-
-somar(40);                          // 70
-somar();                            // 50
-somar(null);                        // 30
-somar(null, null);                  // 0
-somar(null, null, null);            // 0
-somar(null, null, null, null);      // 0
- */
-
-
-
-/* // Argumento por referência
-$a = 50;
-
-function somar(&$numA, $numB){
-    $numA += $numB;
-    echo $numA . "<br />";
-}
-
-somar($a, 2);
-echo "Valor de a: $a";
-
- */
-/* 
-// Function simples
-
-$a = 50;
-
-function somar($numA, $numB){
-    $numA += $numB;
-    echo $numA . "<br />";
-}
-
-somar($a, 2);
-
-echo "Valor de a: $a";
- */
 
 ?>
 </body>
